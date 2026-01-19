@@ -1,0 +1,88 @@
+body {
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div {
+    background: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    max-width: 350px;
+    width: 100%;
+}
+
+h2 {
+    color: #080808;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+label {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #bfc9d9;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+input[type="number"]:focus {
+    border-color: #2d6cdf;
+}
+#b1{
+    background-color: red;
+
+}
+#b2{
+    background-color: blue;
+}
+button {
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background 0.2s;
+}
+button:hover {
+    background: #1a4fa0;
+}
+
+#message {
+    margin-top: 1.2rem;
+    font-size: 1rem;
+    color: #e74c3c;
+    min-height: 1.2em;
+    text-align: center;
+}
+
+@media (max-width: 500px) {
+    div {
+        padding: 1rem;
+        max-width: 95vw;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    button {
+        padding: 0.6rem 1rem;
+        font-size: 0.95rem;
+    }
+}
