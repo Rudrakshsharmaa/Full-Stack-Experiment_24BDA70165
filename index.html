@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My HTML Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f172a, #020617);
+      color: #e5e7eb;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+    }
+
+    header p {
+      color: #94a3b8;
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #020617;
+      border-radius: 18px;
+      padding: 30px;
+      border: 1px solid #1e293b;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      border-color: #38bdf8;
+      box-shadow: 0 20px 40px rgba(56, 189, 248, 0.15);
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #cbd5f5;
+      margin-bottom: 25px;
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 12px 22px;
+      background: #38bdf8;
+      color: #020617;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 12px;
+      transition: background 0.3s ease;
+    }
+
+    .card a:hover {
+      background: #0ea5e9;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>My HTML Projects</h1>
+      <p>Click a project to view the live demo</p>
+    </header>
+
+    <section class="projects">
+
+      <div class="card">
+        <h3>Project 1.1.1</h3>
+        <p>HTML-based project demonstration</p>
+        <a href="C:\Users\Rudraksh Sharma\Desktop\4th Sem\Full Stack-1(Sem-4)\EXP-1\1.1.1">Open Project</a>
+      </div>
+
+      <div class="card">
+        <h3>Project 1.1.2</h3>
+        <p>Interactive UI built using HTML & CSS</p>
+        <a href="C:\Users\Rudraksh Sharma\Desktop\4th Sem\Full Stack-1(Sem-4)\EXP-1\1.2.1">Open Project</a>
+      </div>
+
+      <div class="card">
+        <h3>Project 1.1.3</h3>
+        <p>Frontend web project with clean design</p>
+        <a href="C:\Users\Rudraksh Sharma\Desktop\4th Sem\Full Stack-1(Sem-4)\EXP-1\1.3.1">Open Project</a>
+      </div>
+         
+      
+      <div class="card">
+        <h4>Project 1.2.1</h4>
+        <p>Live Character Counter</p>
+        <a href="C:\Users\Rudraksh Sharma\Desktop\4th Sem\Full Stack-1(Sem-4)\EXP-2\1.2.1">Open Project</a>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 • All projects hosted under one Netlify link
+    </footer>
+
+  </div>
+
+</body>
+</html>
