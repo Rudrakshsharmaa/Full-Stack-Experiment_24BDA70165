@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Library Management System</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f7fb;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:30px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+/* Search */
+.search-box{
+    width:100%;
+    padding:10px;
+    margin-bottom:20px;
+    font-size:16px;
+}
+
+/* Form */
+.form-box{
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom:30px;
+}
+
+.form-box input{
+    width:30%;
+    padding:10px;
+    margin-right:10px;
+}
+
+.form-box button{
+    padding:10px 15px;
+    background:#007bff;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+/* Table */
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+th, td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+    text-align:center;
+}
+
+th{
+    background:#007bff;
+    color:white;
+}
+
+.delete-btn{
+    background:red;
+    color:white;
+    border:none;
+    padding:6px 10px;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Library Management System</h1>
+
+<input type="text" id="search" class="search-box" placeholder="Search by book title..." onkeyup="searchBook()">
+
+<div class="form-box">
+    <input type="text" id="title" placeholder="Book Title">
+    <input type="text" id="author" placeholder="Author">
+    <input type="text" id="year" placeholder="Year">
+    <button onclick="addBook()">Add Book</button>
+</div>
+
+<table>
+<thead>
+<tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Year</th>
+    <th>Action</th>
+</tr>
+</thead>
+
+<tbody id="bookList">
+<tr>
+    <td>Harry Potter</td>
+    <td>J.K. Rowling</td>
+    <td>2001</td>
+    <td><button class="delete-btn" onclick="deleteBook(this)">Delete</button></td>
+</tr>
+<tr>
+    <td>The Alchemist</td>
+    <td>Paulo Coelho</td>
+    <td>1993</td>
+    <td><button class="delete-btn" onclick="deleteBook(this)">Delete</button></td>
+</tr>
+</tbody>
+
+</table>
+
+</div>
+
+<script>
+
+function addBook(){
+    let title = document.getElementById("title").value;
+    let author = document.getElementById("author").value;
+    let year = document.getElementById("year").value;
+
+    if(title === "" || author === "" || year === ""){
+        alert("Please fill all fields");
+        return;
+    }
+
+    let table = document.getElementById("bookList");
+    let row = table.insertRow();
+
+    row.insertCell(0).innerHTML = title;
+    row.insertCell(1).innerHTML = author;
+    row.insertCell(2).innerHTML = year;
+    row.insertCell(3).innerHTML =
+        `<button class="delete-btn" onclick="deleteBook(this)">Delete</button>`;
+
+    document.getElementById("title").value="";
+    document.getElementById("author").value="";
+    document.getElementById("year").value="";
+}
+
+function deleteBook(btn){
+    let row = btn.parentNode.parentNode;
+    row.remove();
+}
+
+function searchBook(){
+    let filter = document.getElementById("search").value.toUpperCase();
+    let rows = document.getElementById("bookList").getElementsByTagName("tr");
+
+    for(let i=0;i<rows.length;i++){
+        let title = rows[i].getElementsByTagName("td")[0];
+        if(title){
+            let txt = title.textContent || title.innerText;
+            rows[i].style.display =
+                txt.toUpperCase().includes(filter) ? "" : "none";
+        }
+    }
+}
+
+</script>
+
+</body>
+</html>

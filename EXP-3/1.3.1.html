@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Product Cards</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f6f9fc;
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    padding:40px;
+    flex-wrap:wrap;
+}
+
+/* Card */
+.product-card{
+    width:260px;
+    padding:20px;
+    background:white;
+    border-radius:16px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    text-align:center;
+    transition:0.3s ease;
+}
+
+.product-card:hover{
+    transform:translateY(-5px);
+}
+
+/* Image Box */
+.image-box{
+    height:150px;
+    background:#f3f6f9;
+    border-radius:12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.image-box img{
+    width:80px;
+}
+
+/* Text */
+h3{
+    margin:10px 0;
+}
+
+.price{
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* Stock Badge */
+.stock{
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:14px;
+    display:inline-block;
+    margin-top:10px;
+}
+
+.in{
+    background:#e6faef;
+    color:green;
+}
+
+.out{
+    background:#ffe6e6;
+    color:red;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Card 1 -->
+    <div class="product-card">
+        <div class="image-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png">
+        </div>
+        <h3>Wireless Headphones</h3>
+        <p class="price">$129.99</p>
+        <span class="stock in">In Stock</span>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="product-card">
+        <div class="image-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/1041/1041906.png">
+        </div>
+        <h3>Mechanical Keyboard</h3>
+        <p class="price">$89.99</p>
+        <span class="stock out">Out of Stock</span>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="product-card">
+        <div class="image-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/1041/1041919.png">
+        </div>
+        <h3>Smart Watch</h3>
+        <p class="price">$199.99</p>
+        <span class="stock in">In Stock</span>
+    </div>
+
+</div>
+
+</body>
+</html>
