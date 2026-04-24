@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Person Class Hierarchy</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f7fb;
+}
+
+.container{
+    max-width:700px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+/* Card Style */
+.card{
+    background:white;
+    padding:25px;
+    margin-bottom:20px;
+    border-radius:10px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.08);
+}
+
+.card h2{
+    margin:0 0 10px 0;
+}
+
+.age{
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.message{
+    font-style:italic;
+    color:#444;
+    margin-bottom:10px;
+}
+
+.extra{
+    font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Person Class Hierarchy</h1>
+
+<div id="output"></div>
+
+</div>
+
+<script>
+
+/* Base Class */
+class Person{
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+
+    introduce(){
+        return `Hello, my name is ${this.name}.`;
+    }
+}
+
+/* Student Class */
+class Student extends Person{
+    constructor(name, age, major){
+        super(name, age);
+        this.major = major;
+    }
+
+    introduce(){
+        return `Hello, my name is ${this.name} and I'm studying ${this.major}.`;
+    }
+}
+
+/* Teacher Class */
+class Teacher extends Person{
+    constructor(name, age, subject){
+        super(name, age);
+        this.subject = subject;
+    }
+
+    introduce(){
+        return `Hello, my name is ${this.name} and I teach ${this.subject}.`;
+    }
+}
+
+/* Objects */
+const people = [
+    new Person("Alex Johnson", 30),
+    new Student("Emma Watson", 20, "Computer Science"),
+    new Teacher("Dr. James Wilson", 45, "Mathematics")
+];
+
+/* Display */
+const outputDiv = document.getElementById("output");
+
+people.forEach(person => {
+
+    let type = person.constructor.name;
+
+    let card = document.createElement("div");
+    card.className = "card";
+
+    let extraInfo = "";
+
+    if(type === "Student"){
+        extraInfo = `<p class="extra">Major: ${person.major}</p>`;
+    }
+    else if(type === "Teacher"){
+        extraInfo = `<p class="extra">Teaching: ${person.subject}</p>`;
+    }
+
+    card.innerHTML = `
+        <h2>${person.name} (${type})</h2>
+        <p class="age">Age: ${person.age}</p>
+        <p class="message">${person.introduce()}</p>
+        ${extraInfo}
+    `;
+
+    outputDiv.appendChild(card);
+
+});
+
+</script>
+
+</body>
+</html>

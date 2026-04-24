@@ -1,0 +1,19 @@
+<h2>Student List</h2>
+
+<a href="/students/add">Add Student</a>
+
+<ul>
+
+<% students.forEach(student => { %>
+
+<li>
+<%= student.name %> -
+<%= student.email %> -
+<%= student.course %>
+
+<a href="/students/delete/<%= student._id %>">Delete</a>
+</li>
+
+<% }) %>
+
+</ul>

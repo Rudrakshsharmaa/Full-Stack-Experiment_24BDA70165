@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+        <h2>🏦 Dashboard</h2>
+        <button onclick="getAccount()">Get Account Info</button>
+        <p id="account"></p>
+    </div>
+
+    <div class="card">
+        <h2>💸 Transfer Money</h2>
+
+        <input type="text" id="toUserId" placeholder="Receiver User ID">
+        <input type="number" id="amount" placeholder="Amount">
+
+        <button onclick="transfer()">Send Money</button>
+    </div>
+
+    <div class="card">
+        <h2>📜 Transaction History</h2>
+        <button onclick="getTransactions()">Load Transactions</button>
+        <ul id="transactions"></ul>
+    </div>
+
+    <div class="card">
+        <button onclick="logout()">Logout</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
